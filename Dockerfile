@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:12.04
 MAINTAINER Sqeven admin@sqeven.com
 #ADD ./sources.list /etc/apt/sources.list
 
@@ -13,10 +13,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     automake \
     libtool \
     mysql-client \
-    libmysqlclient-dev \
+    libmysqlclient15-dev \
     libxml2-dev \
     libexpat1-dev \
-    python \
     cron
 
 RUN mkdir -p /usr/local/src/coreseek
