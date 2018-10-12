@@ -38,7 +38,7 @@ ADD ./cron/sphinx /etc/cron.hourly/sphinx
 
 VOLUME ['/usr/local/etc/sphinx', '/var/log/sphinx']
 
-RUN ln -s /usr/local/etc/sphinx/sphinx.conf /usr/local/etc/csft.conf
+RUN ln -s /usr/local/etc/sphinx/sphinx.conf /usr/local/coreseek/etc/csft.conf
 RUN mkdir -p /var/sphinx/log/
 RUN mkdir -p /var/sphinx/data/
 
@@ -49,4 +49,4 @@ EXPOSE 9312
 ADD ./seven.sh /
 RUN chmod +x /seven.sh
 
-#ENTRYPOINT ["/seven.sh"]
+ENTRYPOINT ["/seven.sh"]
